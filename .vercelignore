@@ -1,0 +1,6 @@
+.models-raw
+.next
+node_modules
+.env*
+!.env.example
+*.tsbuildinfo
