@@ -1,0 +1,614 @@
+{
+  "_comment": "Catalogue modelId -> default Sketchfab model (+ per-generation 'variants' with year ranges). All picks are CC Attribution. Preview at https://sketchfab.com/3d-models/<uid>.",
+  "toyota-prius-30": {
+    "uid": "04eaf6b288cc466785365b7d985e3b29",
+    "note": "Toyota Prius 2012 (XW30), ~19k faces",
+    "generation": "XW30",
+    "years": [
+      2010,
+      2015
+    ],
+    "variants": {
+      "XW20": {
+        "uid": "2df94f0aa23d43b89eda64f031310620",
+        "years": [
+          2003,
+          2009
+        ]
+      }
+    }
+  },
+  "hyundai-elantra-ad": {
+    "uid": "cd5741852515425aa3c058b7e081dd2c",
+    "note": "2022 Elantra N (CN7, not AD — no CC BY AD model found), ~500k faces",
+    "generation": "CN7",
+    "years": [
+      2021,
+      2026
+    ],
+    "variants": {
+      "MD": {
+        "uid": "ec1dc61f11d241869c75b63e3bb2704d",
+        "years": [
+          2011,
+          2015
+        ]
+      }
+    }
+  },
+  "mercedes-e-w212": {
+    "uid": "820387a848a8449eb6565ff35e74388a",
+    "note": "E-class W212, ~152k faces",
+    "generation": "W212",
+    "years": [
+      2010,
+      2016
+    ],
+    "variants": {
+      "W210": {
+        "uid": "1bac3d44716541a3aa0b53671911066e",
+        "years": [
+          1995,
+          2002
+        ]
+      },
+      "W211": {
+        "uid": "eeec59df77404b7082498bbe63034ecf",
+        "years": [
+          2003,
+          2009
+        ]
+      },
+      "W213": {
+        "uid": "dd08667063514040aa27387803bc6e8d",
+        "years": [
+          2017,
+          2023
+        ]
+      }
+    }
+  },
+  "bmw-5-f10": {
+    "uid": "06c168ea08104f7caef52a91c362f34e",
+    "note": "BMW M5 (F10), ~12k faces",
+    "generation": "F10",
+    "years": [
+      2011,
+      2017
+    ],
+    "variants": {
+      "E39": {
+        "uid": "531a5a93da5d493d9918eb36f011c20d",
+        "years": [
+          1996,
+          2003
+        ]
+      },
+      "G30": {
+        "uid": "c2910a4e0d154f2ebdc41e6265eaaac3",
+        "years": [
+          2018,
+          2023
+        ]
+      }
+    }
+  },
+  "kia-optima-jf": {
+    "uid": "d677a6fb59e440a59e040a52e7585476",
+    "note": "KIA Optima (generation to verify), ~17k faces",
+    "generation": "TF/JF",
+    "years": [
+      2011,
+      2020
+    ]
+  },
+  "toyota-camry-70": {
+    "uid": "236a5a6e2fa6420fbdf641f4800cd544",
+    "note": "Toyota Camry 2020 (XV70), ~177k faces",
+    "generation": "XV70",
+    "years": [
+      2018,
+      2024
+    ],
+    "variants": {
+      "XV40": {
+        "uid": "3ac6fcdf74fa43dba230626e38110836",
+        "years": [
+          2006,
+          2011
+        ]
+      },
+      "XV80": {
+        "uid": "98c70e5aa53446728fea4d8f448bbf33",
+        "years": [
+          2025,
+          2026
+        ]
+      }
+    }
+  },
+  "chevrolet-cruze-j300": {
+    "uid": "852cbc5b6f8c4762b54a0debe7fb5c0e",
+    "note": "Chevrolet Cruze 2008-2017 (J300), ~216k faces. Previous pick was an engine model.",
+    "generation": "J300",
+    "years": [
+      2009,
+      2016
+    ],
+    "variants": {
+      "J400": {
+        "uid": "235872def34f43198c9c2e98ca439109",
+        "years": [
+          2017,
+          2020
+        ]
+      }
+    }
+  },
+  "toyota-prado-150": {
+    "uid": "8d2aa08e92da4c698ef922a71bae8729",
+    "note": "2013 Land Cruiser Prado (J150), ~200k faces",
+    "generation": "J150",
+    "years": [
+      2010,
+      2023
+    ],
+    "variants": {
+      "J120": {
+        "uid": "8cf16bc588764ac7a3ea06bc655f6190",
+        "years": [
+          2003,
+          2009
+        ]
+      }
+    }
+  },
+  "kia-sportage-ql": {
+    "uid": "8f794775950041d7a9ae867e40646a33",
+    "note": "2018 Kia Sportage (QL), ~564k faces",
+    "generation": "QL",
+    "years": [
+      2016,
+      2021
+    ],
+    "variants": {
+      "SL": {
+        "uid": "f15205a444fb42f7a2ebf6765a36026a",
+        "years": [
+          2010,
+          2015
+        ]
+      },
+      "NQ5": {
+        "uid": "87c6560c7c4e419f92b0b278cdd2a052",
+        "years": [
+          2022,
+          2026
+        ]
+      }
+    }
+  },
+  "hyundai-sonata-dn8": {
+    "uid": "e61e68b09a6e4341a9815caab57d4732",
+    "note": "Hyundai Sonata 2024 (DN8 facelift), ~541k faces. Previous pick had a police/taxi livery.",
+    "generation": "DN8",
+    "years": [
+      2020,
+      2026
+    ],
+    "variants": {
+      "NF": {
+        "uid": "c70f45518af94a90865c925f4dc32195",
+        "years": [
+          2005,
+          2009
+        ]
+      },
+      "YF": {
+        "uid": "1c4226384e834176b3f4669e213e59a7",
+        "years": [
+          2010,
+          2014
+        ]
+      },
+      "LF": {
+        "uid": "c435ef02b27140e2a5f800c622bb4c04",
+        "years": [
+          2015,
+          2019
+        ]
+      }
+    }
+  },
+  "mercedes-c-w205": {
+    "uid": "19d59344b7554e6ab614a6cc02e7ad0a",
+    "note": "Mercedes-Benz C-Class 2020 (W205)",
+    "generation": "W205",
+    "years": [
+      2015,
+      2021
+    ],
+    "variants": {
+      "W202": {
+        "uid": "eceb09909d2a499eb8ed8f4b33208df2",
+        "years": [
+          1993,
+          2000
+        ]
+      }
+    }
+  },
+  "lada-2107": {
+    "uid": "31201f80892b404a8e49c272490a664c",
+    "note": "LADA 2107",
+    "generation": "2107",
+    "years": [
+      1982,
+      2012
+    ]
+  },
+  "kia-sorento-um": {
+    "uid": "cc8ead2872aa4dbc8b7d82e38e108b46",
+    "note": "2020 Kia Sorento EX V6 (MQ4 — catalogue is UM; no CC BY UM found yet)",
+    "generation": "MQ4",
+    "years": [
+      2021,
+      2026
+    ],
+    "variants": {
+      "XM": {
+        "uid": "6cfea2e7fe474032b2b7a0f388fc2e6f",
+        "years": [
+          2009,
+          2014
+        ]
+      },
+      "UM": {
+        "uid": "6023faa481d34f0a8cf290d4b5ba8781",
+        "years": [
+          2015,
+          2020
+        ]
+      }
+    }
+  },
+  "ford-transit": {
+    "uid": "9801fbf49bfc456497495e45efa6df0c",
+    "note": "2020 Ford Transit",
+    "generation": "Mk8",
+    "years": [
+      2014,
+      2026
+    ],
+    "variants": {
+      "Mk6": {
+        "uid": "03b2b79cefc947649b61b68c6aa953aa",
+        "years": [
+          2000,
+          2006
+        ]
+      }
+    }
+  },
+  "opel-astra-g-h": {
+    "uid": "d76ad5a0495443eda24a9052565ef9a8",
+    "note": "OPEL Astra GTC 2012 (J). Previous pick (Astra G) was unfinished, with UV-grid textures.",
+    "generation": "J",
+    "years": [
+      2011,
+      2015
+    ],
+    "variants": {
+      "G": {
+        "uid": "4ed43519df5243e8b48520968b5edbf6",
+        "years": [
+          1998,
+          2004
+        ]
+      },
+      "H": {
+        "uid": "a638d4936c3a4cb9ac16b951fc4b752b",
+        "years": [
+          2005,
+          2010
+        ]
+      }
+    }
+  },
+  "hyundai-santa-fe-dm": {
+    "uid": "1445740eb62d4b31b512ab9fe228e505",
+    "note": "Hyundai Santa Fe Shengda (DM, China-market name)",
+    "generation": "DM",
+    "years": [
+      2013,
+      2018
+    ],
+    "variants": {
+      "CM": {
+        "uid": "e3ca827d14bb49449cdcd0d34e2c8120",
+        "years": [
+          2006,
+          2012
+        ]
+      },
+      "TM": {
+        "uid": "feeed3c852fc49d6b3e8f10287974e84",
+        "years": [
+          2019,
+          2023
+        ]
+      }
+    }
+  },
+  "chevrolet-equinox-3": {
+    "uid": "f71a75f282fb4f77a2f8c0b615326c40",
+    "note": "2018 Chevrolet Equinox Premier",
+    "generation": "3",
+    "years": [
+      2018,
+      2026
+    ]
+  },
+  "lada-2106": {
+    "uid": "a73b3cdeddd846209bf7c73d5f04d20f",
+    "note": "VAZ-2106",
+    "generation": "2106",
+    "years": [
+      1976,
+      2006
+    ]
+  },
+  "range-rover-l405": {
+    "uid": "69710b943776432b9f7b9f75842c15ff",
+    "note": "Range Rover (L405), ~1.26M faces",
+    "generation": "L405",
+    "years": [
+      2013,
+      2021
+    ],
+    "variants": {
+      "L322": {
+        "uid": "dd8455bdfa3247feb906145fa2abca03",
+        "years": [
+          2002,
+          2012
+        ]
+      }
+    }
+  },
+  "ford-fusion-2": {
+    "uid": "d43cf0e2d0e449b685aee3cd40e95c5f",
+    "note": "Ford Fusion Sport (2nd gen)",
+    "generation": "2",
+    "years": [
+      2013,
+      2020
+    ]
+  },
+  "bmw-3-f30": {
+    "uid": "3426109189ae47c8a61f0214ee3acd33",
+    "note": "BMW F30 (~393k faces). Previous pick had a wireframe-style baked texture.",
+    "generation": "F30",
+    "years": [
+      2012,
+      2018
+    ],
+    "variants": {
+      "E46": {
+        "uid": "614c2f1660474178a1d4717b7492d1c7",
+        "years": [
+          1998,
+          2005
+        ]
+      }
+    }
+  },
+  "mercedes-vito-w639": {
+    "uid": "fbbeae0a1a40455896557f6642b31eb5",
+    "note": "Mercedes Vito Van 2010 Facelift (W639)",
+    "generation": "W639",
+    "years": [
+      2004,
+      2014
+    ]
+  },
+  "bmw-x5-e70": {
+    "uid": "08b867223842444baaf88bd442991c5f",
+    "note": "2009 BMW X5 xDrive 4.8i (E70)",
+    "generation": "E70",
+    "years": [
+      2007,
+      2013
+    ],
+    "variants": {
+      "E53": {
+        "uid": "1dfdb422f05d44b287e332bec4311c50",
+        "years": [
+          2000,
+          2006
+        ]
+      },
+      "F15": {
+        "uid": "54020f5b85f94db1b0f2cc2a0b7de425",
+        "years": [
+          2014,
+          2018
+        ]
+      },
+      "G05": {
+        "uid": "4abeaa4dfee24ae5a49e12b624882e1b",
+        "years": [
+          2019,
+          2026
+        ]
+      }
+    }
+  },
+  "lada-niva": {
+    "uid": "26ebf5872bce4ff4ad2baee41882d6b2",
+    "note": "Lada Niva",
+    "generation": "Niva",
+    "years": [
+      1977,
+      2024
+    ]
+  },
+  "changan-uni-z": {
+    "uid": "c6a50516b83c429bac30654a391de62d",
+    "note": "Changan UNI-Z — only CC BY candidate, quality unknown",
+    "generation": "Uni-Z",
+    "years": [
+      2024,
+      2026
+    ]
+  },
+  "toyota-corolla-e180": {
+    "uid": "36f95efb0585464cae43a25a3b3392e8",
+    "note": "2014 Toyota Corolla E180 EU",
+    "generation": "E180",
+    "years": [
+      2014,
+      2019
+    ],
+    "variants": {
+      "E210": {
+        "uid": "6d7d34ee42734d1ab28a6b1f1c5fc4fc",
+        "years": [
+          2020,
+          2026
+        ]
+      }
+    }
+  },
+  "lada-2115": {
+    "uid": "78906f181f6249e697996bd0e1eb6b9a",
+    "note": "LADA 2115 (Samara)",
+    "generation": "2115",
+    "years": [
+      1997,
+      2012
+    ]
+  },
+  "kia-rio-4": {
+    "uid": "82803d9c4afb4cf2867ef364d31e6528",
+    "note": "2021 Kia Rio",
+    "generation": "4",
+    "years": [
+      2017,
+      2026
+    ],
+    "variants": {
+      "3": {
+        "uid": "a96709757b8f453fa8809c1931e93d41",
+        "years": [
+          2011,
+          2016
+        ]
+      }
+    }
+  },
+  "mercedes-s-w221": {
+    "uid": "6b1c0ad55406406a8cf8177dc0a4f2b9",
+    "note": "Mercedes-Benz S-class W221",
+    "generation": "W221",
+    "years": [
+      2006,
+      2013
+    ],
+    "variants": {
+      "W220": {
+        "uid": "b347ac28947f4d2db9da222772401fdd",
+        "years": [
+          1999,
+          2005
+        ]
+      },
+      "W222": {
+        "uid": "f42d9d13b0404b5b9a2302a4c590a94d",
+        "years": [
+          2014,
+          2020
+        ]
+      }
+    }
+  },
+  "hyundai-accent-rb": {
+    "uid": "cec6b04b06724f1088129c1054ccb1ec",
+    "note": "Hyundai Accent 2013 (RB), ~950k faces",
+    "generation": "RB",
+    "years": [
+      2011,
+      2017
+    ],
+    "variants": {
+      "MC": {
+        "uid": "ecc53b9371604782b23d3056556f9080",
+        "years": [
+          2006,
+          2010
+        ]
+      }
+    }
+  },
+  "mercedes-sprinter-906": {
+    "uid": "f69de1315bb049c8946d57f6006acd73",
+    "note": "Mercedes Benz Sprinter 2006 (W906)",
+    "generation": "W906",
+    "years": [
+      2007,
+      2018
+    ]
+  },
+  "chevrolet-malibu-9": {
+    "uid": "fc07e847ec6c4dbaa02d53e1110a6dd7",
+    "note": "2016 Chevrolet Malibu 2.0T Premier",
+    "generation": "9",
+    "years": [
+      2016,
+      2026
+    ]
+  },
+  "gaz-gazel": {
+    "uid": "48d9f765ae454cab9c527029f8b86a51",
+    "note": "GAZ 322132 (classic GAZelle minibus). Previous pick 'Gazella' was an animal model.",
+    "generation": "GAZel",
+    "years": [
+      1994,
+      2024
+    ]
+  },
+  "hyundai-tucson-tl": {
+    "uid": "7674a3bd168a451daf73fc0a33d39589",
+    "note": "2015 Hyundai Tucson",
+    "generation": "TL",
+    "years": [
+      2016,
+      2020
+    ],
+    "variants": {
+      "LM": {
+        "uid": "e239ad27c5854f4189fe467ffb1ec303",
+        "years": [
+          2010,
+          2015
+        ]
+      },
+      "NX4": {
+        "uid": "574deec95f094e9192b0023d3d4ad607",
+        "years": [
+          2021,
+          2026
+        ]
+      }
+    }
+  },
+  "toyota-rav4-xa50": {
+    "uid": "de74fe4e98004c92b1103947597d1b53",
+    "note": "2021 Toyota RAV4 Hybrid (XA50)",
+    "generation": "XA50",
+    "years": [
+      2019,
+      2026
+    ]
+  }
+}

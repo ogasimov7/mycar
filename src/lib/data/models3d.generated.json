@@ -1,0 +1,418 @@
+{
+  "toyota-prius-30": {
+    "url": "/models/toyota-prius-30.glb",
+    "title": "Toyota Prius 2012",
+    "author": "Doz3",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/toyota-prius-2012-04eaf6b288cc466785365b7d985e3b29",
+    "uid": "04eaf6b288cc466785365b7d985e3b29",
+    "generation": "XW30",
+    "years": [
+      2010,
+      2015
+    ]
+  },
+  "hyundai-elantra-ad": {
+    "url": "/models/hyundai-elantra-ad.glb",
+    "title": "2022 Hyundai Elantra N",
+    "author": "tonielpro520",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/2022-hyundai-elantra-n-cd5741852515425aa3c058b7e081dd2c",
+    "uid": "cd5741852515425aa3c058b7e081dd2c",
+    "generation": "CN7",
+    "years": [
+      2021,
+      2026
+    ]
+  },
+  "mercedes-e-w212": {
+    "url": "/models/mercedes-e-w212.glb",
+    "title": "Mersedes-Benz E-class w212",
+    "author": "Black Snow",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/mersedes-benz-e-class-w212-820387a848a8449eb6565ff35e74388a",
+    "uid": "820387a848a8449eb6565ff35e74388a",
+    "generation": "W212",
+    "years": [
+      2010,
+      2016
+    ]
+  },
+  "bmw-5-f10": {
+    "url": "/models/bmw-5-f10.glb",
+    "title": "BMW M5 (F10)",
+    "author": "Mona x Supercars",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/bmw-m5-f10-06c168ea08104f7caef52a91c362f34e",
+    "uid": "06c168ea08104f7caef52a91c362f34e",
+    "generation": "F10",
+    "years": [
+      2011,
+      2017
+    ]
+  },
+  "kia-optima-jf": {
+    "url": "/models/kia-optima-jf.glb",
+    "title": "KIA Optima",
+    "author": "devPilot",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/kia-optima-d677a6fb59e440a59e040a52e7585476",
+    "uid": "d677a6fb59e440a59e040a52e7585476",
+    "generation": "TF/JF",
+    "years": [
+      2011,
+      2020
+    ]
+  },
+  "toyota-camry-70": {
+    "url": "/models/toyota-camry-70.glb",
+    "title": "Toyota Camry 2020",
+    "author": "ItsDiyor",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/toyota-camry-2020-236a5a6e2fa6420fbdf641f4800cd544",
+    "uid": "236a5a6e2fa6420fbdf641f4800cd544",
+    "generation": "XV70",
+    "years": [
+      2018,
+      2024
+    ]
+  },
+  "toyota-prado-150": {
+    "url": "/models/toyota-prado-150.glb",
+    "title": "2013 Toyota Land Cruiser Prado",
+    "author": "Romanov_13",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/2013-toyota-land-cruiser-prado-8d2aa08e92da4c698ef922a71bae8729",
+    "uid": "8d2aa08e92da4c698ef922a71bae8729",
+    "generation": "J150",
+    "years": [
+      2010,
+      2023
+    ]
+  },
+  "kia-sportage-ql": {
+    "url": "/models/kia-sportage-ql.glb",
+    "title": "2018 Kia Sportage",
+    "author": "tonielpro520",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/2018-kia-sportage-8f794775950041d7a9ae867e40646a33",
+    "uid": "8f794775950041d7a9ae867e40646a33",
+    "generation": "QL",
+    "years": [
+      2016,
+      2021
+    ]
+  },
+  "chevrolet-cruze-j300": {
+    "url": "/models/chevrolet-cruze-j300.glb",
+    "title": "Chevrolet Cruze 2008-2017",
+    "author": "Merc_TV",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/chevrolet-cruze-2008-2017-852cbc5b6f8c4762b54a0debe7fb5c0e",
+    "uid": "852cbc5b6f8c4762b54a0debe7fb5c0e",
+    "generation": "J300",
+    "years": [
+      2009,
+      2016
+    ]
+  },
+  "hyundai-sonata-dn8": {
+    "url": "/models/hyundai-sonata-dn8.glb",
+    "title": "Hyundai Sonata 2024",
+    "author": "zapkolenko07",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/hyundai-sonata-2024-e61e68b09a6e4341a9815caab57d4732",
+    "uid": "e61e68b09a6e4341a9815caab57d4732",
+    "generation": "DN8",
+    "years": [
+      2020,
+      2026
+    ]
+  },
+  "mercedes-c-w205": {
+    "url": "/models/mercedes-c-w205.glb",
+    "title": "Mercedes-Benz C-Class 2020",
+    "author": "ItsDiyor",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/mercedes-benz-c-class-2020-19d59344b7554e6ab614a6cc02e7ad0a",
+    "uid": "19d59344b7554e6ab614a6cc02e7ad0a",
+    "generation": "W205",
+    "years": [
+      2015,
+      2021
+    ]
+  },
+  "lada-2107": {
+    "url": "/models/lada-2107.glb",
+    "title": "LADA 2107",
+    "author": "tiunov.se",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/lada-2107-31201f80892b404a8e49c272490a664c",
+    "uid": "31201f80892b404a8e49c272490a664c",
+    "generation": "2107",
+    "years": [
+      1982,
+      2012
+    ]
+  },
+  "kia-sorento-um": {
+    "url": "/models/kia-sorento-um.glb",
+    "title": "2020 Kia Sorento EX V6",
+    "author": "mvntyyy",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/2020-kia-sorento-ex-v6-cc8ead2872aa4dbc8b7d82e38e108b46",
+    "uid": "cc8ead2872aa4dbc8b7d82e38e108b46",
+    "generation": "MQ4",
+    "years": [
+      2021,
+      2026
+    ]
+  },
+  "ford-transit": {
+    "url": "/models/ford-transit.glb",
+    "title": "2020 Ford Transit",
+    "author": "tonielpro520",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/2020-ford-transit-9801fbf49bfc456497495e45efa6df0c",
+    "uid": "9801fbf49bfc456497495e45efa6df0c",
+    "generation": "Mk8",
+    "years": [
+      2014,
+      2026
+    ]
+  },
+  "hyundai-santa-fe-dm": {
+    "url": "/models/hyundai-santa-fe-dm.glb",
+    "title": "Hyundai Santa Fe Shengda",
+    "author": "Nieve5677",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/hyundai-santa-fe-shengda-1445740eb62d4b31b512ab9fe228e505",
+    "uid": "1445740eb62d4b31b512ab9fe228e505",
+    "generation": "DM",
+    "years": [
+      2013,
+      2018
+    ]
+  },
+  "chevrolet-equinox-3": {
+    "url": "/models/chevrolet-equinox-3.glb",
+    "title": "2018 Chevrolet Equinox Premier",
+    "author": "007",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/2018-chevrolet-equinox-premier-f71a75f282fb4f77a2f8c0b615326c40",
+    "uid": "f71a75f282fb4f77a2f8c0b615326c40",
+    "generation": "3",
+    "years": [
+      2018,
+      2026
+    ]
+  },
+  "lada-2106": {
+    "url": "/models/lada-2106.glb",
+    "title": "VAZ-2106",
+    "author": "domhathair",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/vaz-2106-a73b3cdeddd846209bf7c73d5f04d20f",
+    "uid": "a73b3cdeddd846209bf7c73d5f04d20f",
+    "generation": "2106",
+    "years": [
+      1976,
+      2006
+    ]
+  },
+  "range-rover-l405": {
+    "url": "/models/range-rover-l405.glb",
+    "title": "Range Rover (L405)",
+    "author": "Sloftm_Carz",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/range-rover-l405-69710b943776432b9f7b9f75842c15ff",
+    "uid": "69710b943776432b9f7b9f75842c15ff",
+    "generation": "L405",
+    "years": [
+      2013,
+      2021
+    ]
+  },
+  "ford-fusion-2": {
+    "url": "/models/ford-fusion-2.glb",
+    "title": "Ford Fusion Sport",
+    "author": "David_Holiday",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/ford-fusion-sport-d43cf0e2d0e449b685aee3cd40e95c5f",
+    "uid": "d43cf0e2d0e449b685aee3cd40e95c5f",
+    "generation": "2",
+    "years": [
+      2013,
+      2020
+    ]
+  },
+  "mercedes-vito-w639": {
+    "url": "/models/mercedes-vito-w639.glb",
+    "title": "Mercedes Vito Van 2010 Facelift Short Version",
+    "author": "solid3DDD",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/mercedes-vito-van-2010-facelift-short-version-fbbeae0a1a40455896557f6642b31eb5",
+    "uid": "fbbeae0a1a40455896557f6642b31eb5",
+    "generation": "W639",
+    "years": [
+      2004,
+      2014
+    ]
+  },
+  "bmw-x5-e70": {
+    "url": "/models/bmw-x5-e70.glb",
+    "title": "2009 BMW X5 XDrive 4.8i",
+    "author": "tonielpro520",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/2009-bmw-x5-xdrive-48i-08b867223842444baaf88bd442991c5f",
+    "uid": "08b867223842444baaf88bd442991c5f",
+    "generation": "E70",
+    "years": [
+      2007,
+      2013
+    ]
+  },
+  "lada-niva": {
+    "url": "/models/lada-niva.glb",
+    "title": "Lada Niva",
+    "author": "Greg McKechnie",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/lada-niva-26ebf5872bce4ff4ad2baee41882d6b2",
+    "uid": "26ebf5872bce4ff4ad2baee41882d6b2",
+    "generation": "Niva",
+    "years": [
+      1977,
+      2024
+    ]
+  },
+  "changan-uni-z": {
+    "url": "/models/changan-uni-z.glb",
+    "title": "Changan UNI-Z",
+    "author": "teenlin3",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/changan-uni-z-c6a50516b83c429bac30654a391de62d",
+    "uid": "c6a50516b83c429bac30654a391de62d",
+    "generation": "Uni-Z",
+    "years": [
+      2024,
+      2026
+    ]
+  },
+  "toyota-corolla-e180": {
+    "url": "/models/toyota-corolla-e180.glb",
+    "title": "2014 Toyota Corolla E180 EU (with interior)",
+    "author": "Armored Wave",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/2014-toyota-corolla-e180-eu-with-interior-36f95efb0585464cae43a25a3b3392e8",
+    "uid": "36f95efb0585464cae43a25a3b3392e8",
+    "generation": "E180",
+    "years": [
+      2014,
+      2019
+    ]
+  },
+  "lada-2115": {
+    "url": "/models/lada-2115.glb",
+    "title": "LADA 2115 (SAMARA)",
+    "author": "Rinl98",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/lada-2115-samara-78906f181f6249e697996bd0e1eb6b9a",
+    "uid": "78906f181f6249e697996bd0e1eb6b9a",
+    "generation": "2115",
+    "years": [
+      1997,
+      2012
+    ]
+  },
+  "kia-rio-4": {
+    "url": "/models/kia-rio-4.glb",
+    "title": "2021 Kia Rio",
+    "author": "tonielpro520",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/2021-kia-rio-82803d9c4afb4cf2867ef364d31e6528",
+    "uid": "82803d9c4afb4cf2867ef364d31e6528",
+    "generation": "4",
+    "years": [
+      2017,
+      2026
+    ]
+  },
+  "mercedes-s-w221": {
+    "url": "/models/mercedes-s-w221.glb",
+    "title": "Mersedes-Benz S-class W221",
+    "author": "Black Snow",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/mersedes-benz-s-class-w221-6b1c0ad55406406a8cf8177dc0a4f2b9",
+    "uid": "6b1c0ad55406406a8cf8177dc0a4f2b9",
+    "generation": "W221",
+    "years": [
+      2006,
+      2013
+    ]
+  },
+  "hyundai-accent-rb": {
+    "url": "/models/hyundai-accent-rb.glb",
+    "title": "hyundai accent 2013",
+    "author": "L95XP",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/hyundai-accent-2013-cec6b04b06724f1088129c1054ccb1ec",
+    "uid": "cec6b04b06724f1088129c1054ccb1ec",
+    "generation": "RB",
+    "years": [
+      2011,
+      2017
+    ]
+  },
+  "mercedes-sprinter-906": {
+    "url": "/models/mercedes-sprinter-906.glb",
+    "title": "Mercedes Benz Sprinter 2006",
+    "author": "Max",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/mercedes-benz-sprinter-2006-f69de1315bb049c8946d57f6006acd73",
+    "uid": "f69de1315bb049c8946d57f6006acd73",
+    "generation": "W906",
+    "years": [
+      2007,
+      2018
+    ]
+  },
+  "chevrolet-malibu-9": {
+    "url": "/models/chevrolet-malibu-9.glb",
+    "title": "2016 Chevrolet Malibu 2.0 T Premier",
+    "author": "Ddiaz Design",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/2016-chevrolet-malibu-20-t-premier-fc07e847ec6c4dbaa02d53e1110a6dd7",
+    "uid": "fc07e847ec6c4dbaa02d53e1110a6dd7",
+    "generation": "9",
+    "years": [
+      2016,
+      2026
+    ]
+  },
+  "hyundai-tucson-tl": {
+    "url": "/models/hyundai-tucson-tl.glb",
+    "title": "2015 Hyundai Tucson",
+    "author": "razor24",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/2015-hyundai-tucson-7674a3bd168a451daf73fc0a33d39589",
+    "uid": "7674a3bd168a451daf73fc0a33d39589",
+    "generation": "TL",
+    "years": [
+      2016,
+      2020
+    ]
+  },
+  "toyota-rav4-xa50": {
+    "url": "/models/toyota-rav4-xa50.glb",
+    "title": "2021 Toyota RAV4 Hybrid",
+    "author": "tonielpro520",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://sketchfab.com/3d-models/2021-toyota-rav4-hybrid-de74fe4e98004c92b1103947597d1b53",
+    "uid": "de74fe4e98004c92b1103947597d1b53",
+    "generation": "XA50",
+    "years": [
+      2019,
+      2026
+    ]
+  }
+}

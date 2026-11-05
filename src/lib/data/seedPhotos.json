@@ -1,0 +1,256 @@
+{
+ "seed-1": {
+  "photos": [
+   "/listings/seed-1.jpg"
+  ],
+  "color": "#f2f2f0",
+  "colorName": "Ağ",
+  "credit": {
+   "author": "Peżot",
+   "license": "CC0",
+   "url": "https://commons.wikimedia.org/wiki/File:Toyota_Prius_(ZVW30)_front_Poznan_2011.jpg"
+  }
+ },
+ "seed-2": {
+  "photos": [
+   "/listings/seed-2.jpg"
+  ],
+  "color": "#a8adb3",
+  "colorName": "Gümüşü",
+  "credit": {
+   "author": "Ethan Llamas",
+   "license": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Toyota_Prius_(XW30)_1.8_Hybrid_2011.jpg"
+  }
+ },
+ "seed-3": {
+  "photos": [
+   "/listings/seed-3.jpg",
+   "/listings/seed-3-2.jpg"
+  ],
+  "color": "#f2f2f0",
+  "colorName": "Ağ",
+  "credit": {
+   "author": "EurovisionNim",
+   "license": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:2017_Hyundai_Elantra_(AD)_Elite_sedan_(2017-12-09)_01.jpg"
+  }
+ },
+ "seed-4": {
+  "photos": [
+   "/listings/seed-4.jpg"
+  ],
+  "color": "#5b6168",
+  "colorName": "Boz",
+  "credit": {
+   "author": "EurovisionNim",
+   "license": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:2016_Hyundai_Elantra_(AD)_Active_sedan_(2016-11-20).jpg"
+  }
+ },
+ "seed-5": {
+  "photos": [
+   "/listings/seed-5.jpg"
+  ],
+  "color": "#f2f2f0",
+  "colorName": "Ağ",
+  "credit": {
+   "author": "Ethan Llamas",
+   "license": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Mercedes-Benz_W212_E300_Avantgarde_2013_(1).jpg"
+  }
+ },
+ "seed-6": {
+  "photos": [
+   "/listings/seed-6.jpg",
+   "/listings/seed-6-2.jpg",
+   "/listings/seed-6-3.jpg"
+  ],
+  "color": "#f2f2f0",
+  "colorName": "Ağ",
+  "credit": {
+   "author": "Renée Kools",
+   "license": "CC BY 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:White_BMW_5_Series_F10_front_view.jpg"
+  }
+ },
+ "seed-7": {
+  "photos": [
+   "/listings/seed-7.jpg",
+   "/listings/seed-7-2.jpg"
+  ],
+  "color": "#5b6168",
+  "colorName": "Boz",
+  "credit": {
+   "author": "Damian B Oh",
+   "license": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:BMW_F10_LCI_528i_Sophisto_Grey_(1).jpg"
+  }
+ },
+ "seed-8": {
+  "photos": [
+   "/listings/seed-8.jpg",
+   "/listings/seed-8-2.jpg"
+  ],
+  "color": "#f2f2f0",
+  "colorName": "Ağ",
+  "credit": {
+   "author": "Vauxford",
+   "license": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:2015_Kia_Optima_3_ISG_CRDi_1.7_Front.jpg"
+  }
+ },
+ "seed-9": {
+  "photos": [
+   "/listings/seed-9.jpg",
+   "/listings/seed-9-2.jpg"
+  ],
+  "color": "#141414",
+  "colorName": "Qara",
+  "credit": {
+   "author": "Throwawayacc222",
+   "license": "CC0",
+   "url": "https://commons.wikimedia.org/wiki/File:2020_Toyota_Camry_S-Edition_front.jpg"
+  }
+ },
+ "seed-10": {
+  "photos": [
+   "/listings/seed-10.jpg",
+   "/listings/seed-10-2.jpg"
+  ],
+  "color": "#f2f2f0",
+  "colorName": "Ağ",
+  "credit": {
+   "author": "Dinkun Chen",
+   "license": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:CHEVROLET_CRUZE_(J300)_China_(10).jpg"
+  }
+ },
+ "seed-11": {
+  "photos": [
+   "/listings/seed-11.jpg",
+   "/listings/seed-11-2.jpg"
+  ],
+  "color": "#f2f2f0",
+  "colorName": "Ağ",
+  "credit": {
+   "author": "JamesYoung8167",
+   "license": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Toyota_Land_Cruiser_Prado_J150_LWB_facelift_Sanming_01_2022-11-21.jpg"
+  }
+ },
+ "seed-12": {
+  "photos": [
+   "/listings/seed-12.jpg",
+   "/listings/seed-12-2.jpg"
+  ],
+  "color": "#a8adb3",
+  "colorName": "Gümüşü",
+  "credit": {
+   "author": "EurovisionNim",
+   "license": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:2016_Kia_Sportage_(QL_MY17)_Platinum_wagon_(2017-07-15)_01.jpg"
+  }
+ },
+ "seed-13": {
+  "photos": [
+   "/listings/seed-13.jpg",
+   "/listings/seed-13-2.jpg"
+  ],
+  "color": "#f2f2f0",
+  "colorName": "Ağ",
+  "credit": {
+   "author": "Mr.choppers",
+   "license": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:2020_Hyundai_Sonata_SEL_(Quartz_White),_front_right.jpg"
+  }
+ },
+ "seed-14": {
+  "photos": [
+   "/listings/seed-14.jpg"
+  ],
+  "color": "#a8adb3",
+  "colorName": "Gümüşü",
+  "credit": {
+   "author": "Ethan Llamas",
+   "license": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Mercedes-Benz_W205_C180_2021.jpg"
+  }
+ },
+ "seed-15": {
+  "photos": [
+   "/listings/seed-15.jpg"
+  ],
+  "color": "#a8adb3",
+  "colorName": "Gümüşü",
+  "credit": {
+   "author": "Throwawayacc222",
+   "license": "CC0",
+   "url": "https://commons.wikimedia.org/wiki/File:2012_VAZ_210740_silver_front.jpg"
+  }
+ },
+ "seed-16": {
+  "photos": [
+   "/listings/seed-16.jpg",
+   "/listings/seed-16-2.jpg"
+  ],
+  "color": "#f2f2f0",
+  "colorName": "Ağ",
+  "credit": {
+   "author": "OSX",
+   "license": "Public domain",
+   "url": "https://commons.wikimedia.org/wiki/File:2015_Kia_Sorento_(UM_MY15)_Platinum_CRDi_wagon_(2015-11-13)_01.jpg"
+  }
+ },
+ "seed-17": {
+  "photos": [
+   "/listings/seed-17.jpg"
+  ],
+  "color": "#a8adb3",
+  "colorName": "Gümüşü",
+  "credit": {
+   "author": "Benespit",
+   "license": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:0_Hyundai_Santa_Fe_(DM)_0.jpg"
+  }
+ },
+ "seed-18": {
+  "photos": [
+   "/listings/seed-18.jpg",
+   "/listings/seed-18-2.jpg"
+  ],
+  "color": "#f2f2f0",
+  "colorName": "Ağ",
+  "credit": {
+   "author": "Navigator84",
+   "license": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Toyota_Corolla_E180_sedan_01_China_2015-04-06.jpg"
+  }
+ },
+ "seed-19": {
+  "photos": [
+   "/listings/seed-19.jpg",
+   "/listings/seed-19-2.jpg",
+   "/listings/seed-19-3.jpg"
+  ],
+  "color": "#5b6168",
+  "colorName": "Boz",
+  "credit": {
+   "author": "DerSporti",
+   "license": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:2021_AwtoWAS_21214_Lada_Niva_Legend_Urban,_Sondermodell_Black.jpg"
+  }
+ },
+ "seed-20": {
+  "photos": [
+   "/listings/seed-20.jpg"
+  ],
+  "color": "#a8adb3",
+  "colorName": "Gümüşü",
+  "credit": {
+   "author": "Navigator84",
+   "license": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:BMW_X5_E70_facelift_China_2012-05-13.jpg"
+  }
+ }
+}
