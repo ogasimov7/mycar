@@ -44,8 +44,24 @@ npm run dev   # http://localhost:3000
 
 `public/listings/seed-*.jpg` — Wikimedia Commons-dan sərbəst lisenziyalı fotolar (CC0, public domain, CC BY, CC BY-SA). Bir neçə elanda eyni maşının əlavə şəkilləri var (`seed-N-2.jpg`, `-3`) — kartda şəkillər arasında keçmək olur. Müəllif və lisenziya `src/lib/data/seedPhotos.json`-dadır və elan səhifəsində şəklin altında göstərilir (CC BY/BY-SA bunu tələb edir). Elandakı rəng fotodakı maşının rənginə uyğunlaşdırılıb.
 
+## Server və deploy
+- **Canlı sayt:** https://mycar-coral.vercel.app (Vercel layihəsi `mycar`, funksiyalar `fra1` regionunda)
+- **Verilənlər bazası:** Neon Postgres (Vercel Marketplace, `fra1`), Drizzle ORM — `src/db/schema.ts` (`listings`, `garage_cars`, `reports`)
+- **Giriş:** Clerk (e-poçt kodu + Google), `src/proxy.ts` yalnız `/api/*` üçün işləyir
+- **Fotolar:** Vercel Blob (public store `mycar-photos`); brauzer şəkli sıxır və birbaşa Blob-a yükləyir (`/api/upload` token verir)
+- **API:** `/api/listings` (GET hamı, POST/PATCH/DELETE yalnız sahib), `/api/garage` (hesaba bağlı qaraj), `/api/reports`
+- **SEO:** hər elan üçün başlıq/təsvir/OG şəkli, schema.org `Car` JSON-LD, `sitemap.xml`, `robots.txt`
+
+Lokal işə salmaq:
+```bash
+vercel env pull .env.local   # DATABASE_URL, CLERK_*, BLOB_READ_WRITE_TOKEN
+npm run db:push              # cədvəlləri yarat/yenilə
+npm run db:seed              # 20 nümunə elan (təkrar işə salmaq təhlükəsizdir)
+npm run dev
+```
+
 ## Növbəti addımlar
-- Real verilənlər bazası + istifadəçi hesabları (indi data yalnız brauzerdədir)
-- Şəkillər üçün obyekt saxlama (Blob)
+- Öz domen + Clerk production instance (indi Clerk development rejimindədir)
+- Telefonla (SMS) giriş — Clerk Pro planı tələb edir
 - Server tərəfli push/SMS (indi bildirişlər tətbiq açılanda göndərilir)
 - Real GLB modellər (hər marka üçün)

@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "models:fetch": "node scripts/fetch-3d-models.mjs"
+    "models:fetch": "node scripts/fetch-3d-models.mjs",
+    "db:push": "dotenv -e .env.local -- drizzle-kit push",
+    "db:seed": "dotenv -e .env.local -- tsx scripts/seed-db.mts"
   },
   "dependencies": {
     "@clerk/localizations": "^4.24.6",
