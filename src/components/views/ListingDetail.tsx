@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { ChevronLeft, Flag, Heart, MessageCircle, Phone, Share2, ShieldCheck, Trash2, TrendingDown, Wrench } from "lucide-react";
+import { CheckCircle2, ChevronLeft, Flag, RotateCcw, Heart, MessageCircle, Phone, Share2, ShieldCheck, Trash2, TrendingDown, Wrench } from "lucide-react";
 import { generationInfo, getModel } from "@/lib/data/models";
 import { partName } from "@/lib/data/parts";
 import { ago, azn, date, km } from "@/lib/format";
@@ -13,6 +13,7 @@ import { useHydrated, useStore } from "@/lib/store";
 import { CarCard, CompareButton, ListingPhoto, Price, priceDrop } from "../CarCard";
 import { CreditCalculator } from "../market/CreditCalculator";
 import { toast } from "../Toast";
+import { useAuthAction } from "@/lib/useAuthAction";
 import type { Listing } from "@/lib/types";
 import { AmberButton, OverviewCard } from "../market/OverviewCard";
 import { ProblemCard } from "../ProblemList";
@@ -28,14 +29,16 @@ export function ListingDetail({ id }: { id: string }) {
   const listings = useStore((s) => s.listings);
   const garageCar = useStore((s) => s.garage.find((c) => c.id === listing?.garageCarId));
   const fav = useStore((s) => s.favorites.includes(id));
-  const { toggleFavorite, buyListing, removeListing } = useStore.getState();
+  const listingsLoaded = useStore((s) => s.listingsLoaded);
+  const { toggleFavorite, buyListing, removeListing, updateListing } = useStore.getState();
+  const { run, busy } = useAuthAction();
   const [buyOpen, setBuyOpen] = useState(false);
   const [tab, setTab] = useState<Tab>("Ümumi");
   const [creditOpen, setCreditOpen] = useState(false);
   const [reportOpen, setReportOpen] = useState(false);
   const reported = useStore((s) => s.reports.some((r) => r.listingId === id));
 
-  if (!hydrated) return <div className="mx-4 mt-4 h-[60dvh] animate-pulse rounded-[28px] bg-surface" />;
+  if (!hydrated || (!listing && !listingsLoaded)) return <div className="mx-4 mt-4 h-[60dvh] animate-pulse rounded-[28px] bg-surface" />;
   if (!listing)
     return (
       <div className="p-8 text-center">
@@ -262,15 +265,33 @@ export function ListingDetail({ id }: { id: string }) {
             )}
 
             {listing.mine && (
-              <button
-                onClick={() => {
-                  removeListing(listing.id);
-                  router.push("/elanlar");
-                }}
-                className="btn btn-ghost mt-5 w-full !text-bad"
-              >
-                <Trash2 size={18} /> Elanı sil
-              </button>
+              <div className="mt-5 grid grid-cols-2 gap-2">
+                <button
+                  disabled={busy}
+                  onClick={() =>
+                    run(async () => {
+                      await updateListing(listing.id, { status: listing.status === "sold" ? "active" : "sold" });
+                      toast(listing.status === "sold" ? "Elan yenidən satışdadır" : "Elan “satılıb” kimi qeyd olundu");
+                    })
+                  }
+                  className="btn btn-dark !text-sm"
+                >
+                  {listing.status === "sold" ? <RotateCcw size={16} /> : <CheckCircle2 size={16} />}
+                  {listing.status === "sold" ? "Yenidən sat" : "Satıldı"}
+                </button>
+                <button
+                  disabled={busy}
+                  onClick={() =>
+                    run(async () => {
+                      await removeListing(listing.id);
+                      router.push("/elanlar");
+                    })
+                  }
+                  className="btn btn-ghost !text-sm !text-bad"
+                >
+                  <Trash2 size={16} /> Elanı sil
+                </button>
+              </div>
             )}
           </div>
         </div>
@@ -322,7 +343,7 @@ export function ListingDetail({ id }: { id: string }) {
       >
         <p className="text-sm leading-relaxed text-muted">
           {m.make} {m.model} virtual qarajına əlavə olunacaq. Alış qiyməti <b className="text-text">{azn(listing.price)}</b>, yürüş <b className="text-text">{km(listing.mileage)}</b> kimi
-          qeyd ediləcək. Elan “satılıb” statusuna keçəcək.
+          qeyd ediləcək. Satıcı razılaşmadan sonra elanı “satılıb” kimi bağlayacaq.
         </p>
       </Sheet>
     </div>

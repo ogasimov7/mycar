@@ -3,6 +3,7 @@
 import { useSyncExternalStore } from "react";
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
+import { api, type ListingPatch, type NewListing } from "./api";
 import { demoGarageExtras, seedGarage, seedListings } from "./data/seed";
 import { uid } from "./format";
 import { DOC_KINDS } from "./documents";
@@ -18,7 +19,13 @@ export interface Report {
 const MAX_COMPARE = 3;
 
 interface State {
+  /** Public listings — loaded from the server, never persisted locally */
   listings: Listing[];
+  listingsLoaded: boolean;
+  /** Clerk user id once signed in (set by ServerSync) */
+  userId: string | null;
+  /** Listings created before accounts existed — uploaded on first sign-in */
+  localListings: Listing[];
   garage: GarageCar[];
   favorites: string[];
   savedSearches: SavedSearch[];
@@ -26,9 +33,14 @@ interface State {
   reports: Report[];
   /** Phone notifications for reminders (permission is asked when switched on) */
   notifications: boolean;
-  addListing: (l: Omit<Listing, "id" | "createdAt" | "status">) => string;
-  updateListing: (id: string, patch: Partial<Listing>) => void;
-  removeListing: (id: string) => void;
+  setListings: (l: Listing[]) => void;
+  upsertListing: (l: Listing) => void;
+  setUserId: (id: string | null) => void;
+  setGarage: (cars: GarageCar[]) => void;
+  clearLocalListings: () => void;
+  addListing: (l: NewListing) => Promise<string>;
+  updateListing: (id: string, patch: ListingPatch) => Promise<void>;
+  removeListing: (id: string) => Promise<void>;
   toggleFavorite: (id: string) => void;
   buyListing: (listingId: string) => string | undefined;
   addCar: (c: Omit<GarageCar, "id">) => string;
@@ -37,7 +49,7 @@ interface State {
   addRepair: (carId: string, r: Omit<Repair, "id">, maintenanceIds?: string[]) => void;
   removeRepair: (carId: string, repairId: string) => void;
   markMaintenance: (carId: string, itemId: string, rec: MaintenanceRecord) => void;
-  listCarForSale: (carId: string, data: { price: number; city: string; phone: string; sellerName: string; description: string; photos: string[] }) => string;
+  listCarForSale: (carId: string, data: { price: number; city: string; phone: string; sellerName: string; description: string; photos: string[] }) => Promise<string>;
   addDocument: (carId: string, d: Omit<CarDocument, "id">) => void;
   updateDocument: (carId: string, docId: string, patch: Partial<CarDocument>) => void;
   removeDocument: (carId: string, docId: string) => void;
@@ -59,7 +71,10 @@ const mapCar = (garage: GarageCar[], id: string, f: (c: GarageCar) => GarageCar)
 export const useStore = create<State>()(
   persist(
     (set, get) => ({
-      listings: seedListings(),
+      listings: [],
+      listingsLoaded: false,
+      userId: null,
+      localListings: [],
       garage: seedGarage(),
       favorites: [],
       savedSearches: [],
@@ -67,30 +82,29 @@ export const useStore = create<State>()(
       reports: [],
       notifications: false,
 
-      addListing: (l) => {
-        const id = uid();
-        const createdAt = now();
-        set((s) => ({ listings: [{ ...l, id, createdAt, status: "active", priceHistory: [{ date: createdAt, price: l.price }] }, ...s.listings] }));
-        return id;
+      setListings: (listings) => set({ listings, listingsLoaded: true }),
+      upsertListing: (l) =>
+        set((s) => ({ listings: s.listings.some((x) => x.id === l.id) ? s.listings.map((x) => (x.id === l.id ? l : x)) : [l, ...s.listings] })),
+      setUserId: (userId) => set({ userId }),
+      setGarage: (garage) => set({ garage }),
+      clearLocalListings: () => set({ localListings: [] }),
+
+      addListing: async (l) => {
+        const listing = await api.createListing(l);
+        get().upsertListing(listing);
+        return listing.id;
       },
-      updateListing: (id, patch) =>
-        set((s) => ({
-          listings: s.listings.map((l) => {
-            if (l.id !== id) return l;
-            const next = { ...l, ...patch };
-            if (patch.price !== undefined && patch.price !== l.price) {
-              const hist = l.priceHistory?.length ? l.priceHistory : [{ date: l.createdAt, price: l.price }];
-              next.priceHistory = [...hist, { date: now(), price: patch.price }];
-            }
-            return next;
-          }),
-        })),
-      removeListing: (id) =>
+      updateListing: async (id, patch) => {
+        get().upsertListing(await api.updateListing(id, patch));
+      },
+      removeListing: async (id) => {
+        await api.deleteListing(id);
         set((s) => ({
           listings: s.listings.filter((l) => l.id !== id),
           compare: s.compare.filter((c) => c !== id),
           garage: s.garage.map((c) => (c.listingId === id ? { ...c, listingId: undefined } : c)),
-        })),
+        }));
+      },
       toggleFavorite: (id) =>
         set((s) => ({
           favorites: s.favorites.includes(id) ? s.favorites.filter((f) => f !== id) : [...s.favorites, id],
@@ -117,7 +131,7 @@ export const useStore = create<State>()(
           fromListingId: l.id,
           mileageUpdatedAt: today,
         });
-        set((s) => ({ listings: s.listings.map((x) => (x.id === listingId ? { ...x, status: "sold" } : x)) }));
+        // the seller marks the listing as sold — the buyer only adds the car to their garage
         return id;
       },
 
@@ -130,14 +144,11 @@ export const useStore = create<State>()(
         set((s) => ({
           garage: mapCar(s.garage, id, (c) => ({ ...c, ...patch, ...(patch.mileage !== undefined ? { mileageUpdatedAt: now() } : {}) })),
         })),
-      removeCar: (id) =>
-        set((s) => {
-          const car = s.garage.find((c) => c.id === id);
-          return {
-            garage: s.garage.filter((c) => c.id !== id),
-            listings: car?.listingId ? s.listings.filter((l) => l.id !== car.listingId) : s.listings,
-          };
-        }),
+      removeCar: (id) => {
+        const car = get().garage.find((c) => c.id === id);
+        if (car?.listingId && get().listings.find((l) => l.id === car.listingId)?.mine) get().removeListing(car.listingId).catch(() => {});
+        set((s) => ({ garage: s.garage.filter((c) => c.id !== id) }));
+      },
 
       addRepair: (carId, r, maintenanceIds = []) =>
         set((s) => ({
@@ -167,13 +178,13 @@ export const useStore = create<State>()(
           ),
         })),
 
-      listCarForSale: (carId, data) => {
+      listCarForSale: async (carId, data) => {
         const car = get().garage.find((c) => c.id === carId)!;
-        if (car.listingId) {
-          get().updateListing(car.listingId, { ...data, mileage: car.mileage, status: "active" });
+        if (car.listingId && get().listings.some((l) => l.id === car.listingId && l.mine)) {
+          await get().updateListing(car.listingId, { ...data, mileage: car.mileage, status: "active" });
           return car.listingId;
         }
-        const id = get().addListing({
+        const id = await get().addListing({
           modelId: car.modelId,
           year: car.year,
           mileage: car.mileage,
@@ -183,7 +194,6 @@ export const useStore = create<State>()(
           gearbox: car.gearbox,
           engine: car.engine,
           garageCarId: car.id,
-          mine: true,
           ...data,
         });
         get().updateCar(carId, { listingId: id });
@@ -241,16 +251,26 @@ export const useStore = create<State>()(
         return true;
       },
       clearCompare: () => set({ compare: [] }),
-      reportListing: (r) => set((s) => ({ reports: [...s.reports, { ...r, date: now() }] })),
+      reportListing: (r) => {
+        api.report(r).catch(() => {});
+        set((s) => ({ reports: [...s.reports, { ...r, date: now() }] }));
+      },
       setNotifications: (on) => set({ notifications: on }),
 
-      reset: () =>
-        set({ listings: seedListings(), garage: seedGarage(), favorites: [], savedSearches: [], compare: [], reports: [], notifications: false }),
+      reset: () => set({ garage: seedGarage(), favorites: [], savedSearches: [], compare: [], reports: [], notifications: false }),
     }),
     {
       name: "mycar-store-v1",
       storage: createJSONStorage(() => localStorage),
-      version: 8,
+      version: 9,
+      // listings come from the server; only the user's own device state is kept locally
+      partialize: (s) => {
+        const { listings: _l, listingsLoaded: _ll, userId: _u, ...rest } = s;
+        void _l;
+        void _ll;
+        void _u;
+        return rest;
+      },
       // v2/v3: catalogue grew to turbo.az's top models — sync demo listings without touching user data
       migrate: (persisted, version) => {
         const state = persisted as State;
@@ -308,6 +328,12 @@ export const useStore = create<State>()(
             if (!Array.isArray(raw)) return c;
             return { ...c, fuel: c.id === demo.id ? demo.fuel : "Benzin", fuelLog: c.fuelLog?.length ? c.fuelLog : (raw as GarageCar["fuelLog"]) };
           });
+        }
+        if (version < 9 && state) {
+          // v9: listings moved to the server — keep the user's own local listings to upload after sign-in
+          const legacy = (state as unknown as { listings?: Listing[] }).listings ?? [];
+          state.localListings = legacy.filter((l) => l.mine && !l.id.startsWith("seed-"));
+          delete (state as unknown as { listings?: Listing[] }).listings;
         }
         return state;
       },

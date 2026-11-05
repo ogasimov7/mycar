@@ -12,6 +12,7 @@ import { saleAdvice } from "@/lib/pricing";
 import { useStore } from "@/lib/store";
 import type { GarageCar } from "@/lib/types";
 import { PhotoPicker } from "../../PhotoPicker";
+import { useAuthAction } from "@/lib/useAuthAction";
 import { Sheet } from "../../Sheet";
 
 export function SellTab({ car }: { car: GarageCar }) {
@@ -38,6 +39,7 @@ export function SellTab({ car }: { car: GarageCar }) {
   const [desc, setDesc] = useState(listing?.description ?? autoDesc());
   const [photos, setPhotos] = useState<string[]>(listing?.photos ?? []);
   const [confirm, setConfirm] = useState(false);
+  const { run, busy } = useAuthAction();
 
   return (
     <div className="space-y-4">
@@ -105,17 +107,19 @@ export function SellTab({ car }: { car: GarageCar }) {
 
       <button
         className="btn btn-primary w-full"
-        disabled={!price}
-        onClick={() => {
-          const id = listCarForSale(car.id, { price: +price, city, phone, sellerName: name || "Satıcı", description: desc, photos });
-          router.push(`/elan/${id}`);
-        }}
+        disabled={!price || busy}
+        onClick={() =>
+          run(async () => {
+            const id = await listCarForSale(car.id, { price: +price, city, phone, sellerName: name || "Satıcı", description: desc, photos });
+            router.push(`/elan/${id}`);
+          })
+        }
       >
-        {listing ? "Elanı yenilə" : `${m.make} ${m.model} satışa qoy`}
+        {busy ? "Göndərilir…" : listing ? "Elanı yenilə" : `${m.make} ${m.model} satışa qoy`}
       </button>
 
       {listing && (
-        <button className="btn btn-ghost w-full" onClick={() => removeListing(listing.id)}>
+        <button className="btn btn-ghost w-full" disabled={busy} onClick={() => run(() => removeListing(listing.id))}>
           Satışdan çıxar
         </button>
       )}

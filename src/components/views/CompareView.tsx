@@ -25,7 +25,8 @@ export function CompareView() {
   const ids = useStore((s) => s.compare);
   const listings = useStore((s) => s.listings);
   const toggleCompare = useStore((s) => s.toggleCompare);
-  if (!hydrated) return <div className="mx-4 mt-6 h-96 animate-pulse rounded-[22px] bg-surface" />;
+  const loaded = useStore((s) => s.listingsLoaded);
+  if (!hydrated || !loaded) return <div className="mx-4 mt-6 h-96 animate-pulse rounded-[22px] bg-surface" />;
   const cars = ids.map((id) => listings.find((l) => l.id === id)).filter((l): l is Listing => !!l);
 
   const info = new Map(

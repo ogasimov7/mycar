@@ -25,7 +25,8 @@ import { toast } from "../Toast";
 
 export function Marketplace({ title = "Maşınını tap" }: { title?: string }) {
   const hydrated = useHydrated();
-  if (!hydrated)
+  const loaded = useStore((s) => s.listingsLoaded);
+  if (!hydrated || !loaded)
     return (
       <div className="grid gap-4 px-4 pt-32 sm:grid-cols-2">
         {Array.from({ length: 4 }).map((_, i) => (

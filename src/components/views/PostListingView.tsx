@@ -10,6 +10,7 @@ import { marketEstimate } from "@/lib/pricing";
 import { useHydrated, useStore } from "@/lib/store";
 import { CarFields, emptyCar, type CarFieldValues } from "../CarFields";
 import { PhotoPicker } from "../PhotoPicker";
+import { useAuthAction } from "@/lib/useAuthAction";
 
 export function PostListingView() {
   const router = useRouter();
@@ -25,6 +26,7 @@ export function PostListingView() {
   const [desc, setDesc] = useState("");
   const [photos, setPhotos] = useState<string[]>([]);
   const [error, setError] = useState("");
+  const { run, busy } = useAuthAction();
 
   const est =
     car.modelId && car.year && car.mileage ? marketEstimate(car.modelId, +car.year, +car.mileage, listings).value : null;
@@ -35,8 +37,9 @@ export function PostListingView() {
       onSubmit={(e) => {
         e.preventDefault();
         if (!car.modelId || !car.year || !car.mileage || !price) return setError("Marka, model, il, yürüş və qiyməti doldurun.");
-        try {
-          const id = addListing({
+        setError("");
+        run(async () => {
+          const id = await addListing({
             modelId: car.modelId,
             year: +car.year,
             mileage: +car.mileage,
@@ -51,12 +54,9 @@ export function PostListingView() {
             sellerName: name || "Satıcı",
             description: desc,
             photos,
-            mine: true,
           });
           router.push(`/elan/${id}`);
-        } catch {
-          setError("Yaddaş doldu — şəkillərin sayını azaldın.");
-        }
+        });
       }}
     >
       <h1 className="font-display text-2xl font-bold">Elan yerləşdir</h1>
@@ -129,7 +129,9 @@ export function PostListingView() {
       </section>
 
       {error && <p className="mt-4 text-sm font-semibold text-bad">{error}</p>}
-      <button className="btn btn-primary mt-6 w-full">Elanı yerləşdir</button>
+      <button className="btn btn-primary mt-6 w-full" disabled={busy}>
+        {busy ? "Yerləşdirilir…" : "Elanı yerləşdir"}
+      </button>
     </form>
   );
 }

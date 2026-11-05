@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Show, SignInButton, UserButton } from "@clerk/nextjs";
 import { Bell, CarFront, UserRound } from "lucide-react";
 import { buildReminders } from "@/lib/reminders";
 import { useHydrated, useStore } from "@/lib/store";
@@ -70,6 +71,19 @@ function Alerts() {
   );
 }
 
+function SignInChip() {
+  return (
+    <SignInButton mode="modal">
+      <button className="flex h-10 items-center gap-2 rounded-full bg-dark pl-1 pr-4 text-[13px] font-medium text-white">
+        <span className="grid h-8 w-8 place-items-center rounded-full bg-gradient-to-br from-[#f7d08a] to-[#e9a23b] text-accent-ink">
+          <UserRound size={16} />
+        </span>
+        Daxil ol
+      </button>
+    </SignInButton>
+  );
+}
+
 export function TopBar() {
   const path = usePathname();
   if (/^\/qaraj\/[^/]+$/.test(path) && path !== "/qaraj/elave-et") return null;
@@ -82,9 +96,9 @@ export function TopBar() {
         </div>
         <div className="flex items-center justify-end gap-2">
           <Alerts />
-          <span className="grid h-10 w-10 place-items-center rounded-full bg-gradient-to-br from-[#f7d08a] to-[#e9a23b] text-accent-ink ring-2 ring-surface" aria-hidden>
-            <UserRound size={18} />
-          </span>
+          <Show when="signed-in" fallback={<SignInChip />}>
+            <UserButton appearance={{ elements: { avatarBox: "h-10 w-10 ring-2 ring-surface" } }} />
+          </Show>
         </div>
       </div>
     </header>
