@@ -1,3 +1,4 @@
+import { connection } from "next/server";
 import { eq } from "drizzle-orm";
 import { revalidateTag } from "next/cache";
 import { getDb, schema } from "@/db";
@@ -5,6 +6,8 @@ import { currentUserId, handleError, json, readJson, unauthorized } from "@/lib/
 import { listingById, parseListingPatch, toListing } from "@/lib/server/listings";
 
 export async function GET(_req: Request, ctx: RouteContext<"/api/listings/[id]">) {
+  // per-request data; must stay outside try/catch so prerendering can bail out cleanly
+  await connection();
   try {
     const { id } = await ctx.params;
     const row = await listingById(id);

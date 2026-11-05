@@ -1,3 +1,4 @@
+import { connection } from "next/server";
 import { revalidateTag } from "next/cache";
 import { getDb, schema } from "@/db";
 import { uid } from "@/lib/format";
@@ -5,6 +6,8 @@ import { currentUserId, handleError, json, readJson, unauthorized } from "@/lib/
 import { allListings, parseListingInput, toListing } from "@/lib/server/listings";
 
 export async function GET() {
+  // per-request data; must stay outside try/catch so prerendering can bail out cleanly
+  await connection();
   try {
     return json({ listings: await allListings(await currentUserId()) });
   } catch (e) {
